@@ -97,4 +97,5 @@ Install from GitHub: `hermes skills install <owner>/<repo>/<path-to-skill-dir>`.
 | Claude Code 2.1.304 | `claude plugin marketplace add`, `claude plugin install kiss@kiss-skill`, `claude plugin details kiss` | installed; inventory shows `Skills (1) kiss` |
 | Hermes | skill copied into a throwaway `HERMES_HOME`, `hermes skills list`; Hermes' own `_validate_frontmatter` | listed as enabled; validator accepted it |
 | Codex CLI | not run | no Codex install or login on the build machine; layout follows the official page |
-| `hermes skills install OWNER/kiss-skill/skills/kiss` | not run | the repo is not on GitHub yet |
+| `claude plugin marketplace add jenluvsem/kiss-skill`, `claude plugin install kiss@kiss-skill` | installed from GitHub into a clean HOME; `Skills (1) kiss` | passed |
+| `hermes skills install jenluvsem/kiss-skill/skills/kiss` | clean `HERMES_HOME`; scan SAFE; `hermes skills list` shows `kiss` enabled | passed |
