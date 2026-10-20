@@ -1,38 +1,38 @@
 # kiss
 
-One skill, three agents. It keeps design, code and process as simple as the job allows.
+One skill. Three agents. Design, code and process stay as simple as the job allows.
 
-It works in Claude Code, OpenAI Codex CLI and Hermes Agent. All three read the same file: `skills/kiss/SKILL.md`.
+Claude Code, OpenAI Codex CLI and Hermes Agent all read `skills/kiss/SKILL.md`. Same file.
 
 ## Why
 
-Most scope creep starts with a reasonable question. Do we need another layer? Another flag? Another service? Nobody answers it, the layer ships, and a year later nobody knows why it exists.
+Scope creep rarely arrives as a bad idea. It arrives as a layer. A flag. A service "for later". Nobody vetoes it. A year later the reason is gone.
 
-The skill makes the agent answer first. It walks a short decision ladder (skip it, reuse it, use the platform, use a dependency you already have, write the least code, run it). Then it checks the result against 14 rules, a list of smells and a "never cut" list, so that simple never turns into sloppy.
+So the agent has to answer first. Ladder: skip it, reuse it, platform, a dependency you already have, then the least new code, then run the thing. After that, 14 rules. A smell list. A "never cut" list, so simple doesn't turn into sloppy.
 
-The long version is `skills/kiss/references/bible.md`. Every quote in it was checked against the source page.
+Long version: `skills/kiss/references/bible.md`. I checked the quotes on the source pages.
 
 ## Install
 
-Pick the tool you use. Replace `OWNER` with the GitHub account that hosts this repo.
+Pick the tool you actually use. Put your GitHub account where it says `OWNER`.
 
 ### Claude Code
 
-As a plugin:
+Plugin:
 
 ```
 /plugin marketplace add OWNER/kiss-skill
 /plugin install kiss@kiss-skill
 ```
 
-Or as a personal skill, with no plugin:
+Personal skill, no plugin:
 
 ```bash
 git clone https://github.com/OWNER/kiss-skill
 cp -r kiss-skill/skills/kiss ~/.claude/skills/kiss
 ```
 
-The plugin form names the skill `/kiss:kiss`. The personal form names it `/kiss`.
+Plugin name: `/kiss:kiss`. Personal name: `/kiss`.
 
 ### OpenAI Codex CLI
 
@@ -42,7 +42,7 @@ mkdir -p ~/.agents/skills
 cp -r kiss-skill/skills/kiss ~/.agents/skills/kiss
 ```
 
-For one repository only, copy it to `.agents/skills/kiss` inside that repo. Restart Codex if the skill does not show up. Invoke it with `$kiss`, or run `/skills`.
+Single repo? Copy into `.agents/skills/kiss` inside that repo. If `$kiss` is missing, restart Codex. Call it with `$kiss`. Or `/skills`.
 
 ### Hermes Agent
 
@@ -50,13 +50,13 @@ For one repository only, copy it to `.agents/skills/kiss` inside that repo. Rest
 hermes skills install OWNER/kiss-skill/skills/kiss
 ```
 
-Hermes scans the skill before it installs. Or add the repo as a source first with `hermes skills tap add OWNER/kiss-skill`.
+It scans before install. You can also `hermes skills tap add OWNER/kiss-skill` and pull from there.
 
-Hermes can also read `~/.agents/skills`, so the Codex copy above can serve both. Add that folder to `skills.external_dirs` in `config.yaml`.
+Hermes will read `~/.agents/skills` too, so the Codex copy can feed both. Point `skills.external_dirs` at that folder in `config.yaml`.
 
 ## Use
 
-The agent loads the skill on its own when you design, choose between options, or review. You can also call it by name:
+It loads itself when you design, pick an option, or review. You can also poke it:
 
 ```
 Use the kiss skill to review this plan before I start.
@@ -66,7 +66,7 @@ Use the kiss skill to review this plan before I start.
 $kiss  should this be a new service or a function in the existing one?
 ```
 
-A typical answer names what to cut, what to reuse, and one line about what was skipped.
+Expect a cut list, a reuse list, and one line about what got skipped.
 
 ## Layout
 
@@ -85,14 +85,14 @@ python3 tests/validate_skill.py
 python3 -m unittest discover -s tests
 ```
 
-The same two commands run in GitHub Actions on every push.
+Same pair in GitHub Actions, every push.
 
 ## Sources and credits
 
-The ideas belong to the people quoted in `skills/kiss/references/bible.md`: Kelly Johnson, Dijkstra, Hoare, Raymond, Fowler, Beck, Gall, Kernighan, Hickey, Brooks, Ousterhout, Metz, McKinley, Pike, Knuth and others. The bible lists the page for each.
+Names and pages: `skills/kiss/references/bible.md`. Kelly Johnson, Dijkstra, Hoare, Raymond, Fowler, Beck, Gall, Kernighan, Hickey, Brooks, Ousterhout, Metz, McKinley, Pike, Knuth. Others too.
 
-Format references are in `docs/compatibility.md`.
+Format notes: `docs/compatibility.md`.
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. `LICENSE`.
