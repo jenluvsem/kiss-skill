@@ -2,6 +2,6 @@
   "name": "kiss",
   "description": "KISS skill: choose the simplest design, cut scope, layers and dependencies.",
   "version": "1.0.0",
-  "author": { "name": "AUTHOR_TBD" },
+  "author": { "name": "Przemek Kula" },
   "license": "MIT"
 }

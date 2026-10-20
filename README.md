@@ -14,21 +14,21 @@ Long version: `skills/kiss/references/bible.md`. I checked the quotes on the sou
 
 ## Install
 
-Pick the tool you actually use. Put your GitHub account where it says `OWNER`.
+Pick the tool you actually use.
 
 ### Claude Code
 
 Plugin:
 
 ```
-/plugin marketplace add OWNER/kiss-skill
+/plugin marketplace add jenluvsem/kiss-skill
 /plugin install kiss@kiss-skill
 ```
 
 Personal skill, no plugin:
 
 ```bash
-git clone https://github.com/OWNER/kiss-skill
+git clone https://github.com/jenluvsem/kiss-skill
 cp -r kiss-skill/skills/kiss ~/.claude/skills/kiss
 ```
 
@@ -37,7 +37,7 @@ Plugin name: `/kiss:kiss`. Personal name: `/kiss`.
 ### OpenAI Codex CLI
 
 ```bash
-git clone https://github.com/OWNER/kiss-skill
+git clone https://github.com/jenluvsem/kiss-skill
 mkdir -p ~/.agents/skills
 cp -r kiss-skill/skills/kiss ~/.agents/skills/kiss
 ```
@@ -47,10 +47,10 @@ Single repo? Copy into `.agents/skills/kiss` inside that repo. If `$kiss` is mis
 ### Hermes Agent
 
 ```bash
-hermes skills install OWNER/kiss-skill/skills/kiss
+hermes skills install jenluvsem/kiss-skill/skills/kiss
 ```
 
-It scans before install. You can also `hermes skills tap add OWNER/kiss-skill` and pull from there.
+It scans before install. You can also `hermes skills tap add jenluvsem/kiss-skill` and pull from there.
 
 Hermes will read `~/.agents/skills` too, so the Codex copy can feed both. Point `skills.external_dirs` at that folder in `config.yaml`.
 

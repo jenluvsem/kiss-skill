@@ -1,7 +1,7 @@
 {
   "name": "kiss-skill",
   "description": "The KISS skill for Claude Code",
-  "owner": { "name": "AUTHOR_TBD" },
+  "owner": { "name": "Przemek Kula" },
   "plugins": [
     {
       "name": "kiss",
