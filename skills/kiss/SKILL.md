@@ -1,6 +1,6 @@
 ---
 name: kiss
-description: "KISS: choose the simplest design, cut scope and layers."
+description: "KISS: use before adding a feature, plugin or layer. Also before a plugin system, config file, abstraction or dependency. Also when you choose between designs or review a plan or diff. Ask what is needed now, push back on speculative extras, propose the smallest change that works."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -92,7 +92,7 @@ YAGNI needs code that's cheap to change later. Tests and refactoring make "build
 
 ## Limits
 
-- The ladder is a default. If they ask for the bigger thing, build it. Say what it costs.
+- The ladder is a default. Asked for the bigger thing? Say what it costs and what the small version would be. They still want the big one? Build it.
 - The ladder and the "How to apply it" bits are house habits. Not citations. The bible marks what has a source.
 - This skill can't measure anything. Rule 11 needs real numbers from your own tools.
 

@@ -4,7 +4,7 @@ I sat down with the three official skill pages on 2026-10-20 and wrote this so I
 
 ## Decision
 
-Six frontmatter fields, nothing else. That's the Agent Skills spec. Description stays under 60 characters because Hermes cuts it.
+Six frontmatter fields, nothing else. That's the Agent Skills spec. Description: short first sentence (Hermes cuts at 60), trigger words after.
 
 ```yaml
 ---
@@ -22,7 +22,7 @@ Codex wants `name` and `description`. Same standard.
 
 Hermes wants those two as well. Their authoring notes cap the description at 60 characters. The skill index shows 57 plus an ellipsis, which is why. `platforms` and `metadata.hermes` exist but they're optional and Hermes-only, so I left them off. Spec also wants `metadata` values as strings, which is why `"1.0.0"` is quoted.
 
-Sixty characters is a lousy trigger. I stuffed KISS, simplest, scope, layers at the front and hoped. The "When to use" list is in the body, which the model only reads after the skill already loaded. If matching turns out weak, bump the description. Spec allows 1024. The validator has the Hermes cap as a constant.
+Sixty characters is a lousy trigger. I tried it alone, four runs in Claude Code, and it never fired. So I put in the nouns people actually type: plugin system, config file, abstraction, dependency. Six runs, six loads. The "When to use" list can't help here. It's in the body, and the body loads after the skill does.
 
 Things I didn't add:
 

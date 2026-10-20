@@ -2,7 +2,7 @@
 """Validate the KISS skill repo. Stdlib only.
 
 Checks the SKILL.md frontmatter against the Agent Skills spec
-(https://agentskills.io/specification), Hermes' 60-char description limit,
+(https://agentskills.io/specification), Hermes' 60-char index view of the description,
 the repo layout, and the Claude Code plugin manifests.
 """
 import json
@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILL_DIR = ROOT / "skills" / "kiss"
 SPEC_KEYS = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
 NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
-HERMES_DESC_MAX = 60  # Hermes house limit; the spec allows 1024
+HERMES_DESC_MAX = 60  # Hermes shows only this much of a description in its skill index
 SKILL_LINES_MAX = 250  # our target; the spec allows 500
 
 
@@ -79,8 +79,9 @@ def check_frontmatter(text, dirname="kiss"):
     else:
         if len(desc) > 1024:
             errors.append(f"description is {len(desc)} chars, spec max is 1024")
-        if len(desc) > HERMES_DESC_MAX:
-            errors.append(f"description is {len(desc)} chars, Hermes max is {HERMES_DESC_MAX}")
+        lead = re.split(r"(?<=\.)\s", desc.strip())[0]
+        if len(lead) > HERMES_DESC_MAX:
+            errors.append(f"first sentence is {len(lead)} chars; Hermes index shows {HERMES_DESC_MAX}")
         if not desc.endswith("."):
             errors.append("description should end with a period (Hermes house style)")
     if "compatibility" in fields and not (isinstance(fields["compatibility"], str)

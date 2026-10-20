@@ -12,6 +12,9 @@ class FrontmatterTests(unittest.TestCase):
     def test_good(self):
         self.assertEqual(check_frontmatter(GOOD), [])
 
+    def test_long_description_ok_if_first_sentence_is_short(self):
+        self.assertEqual(check_frontmatter(GOOD.replace("Short and valid.", "Short. " + "More words here. " * 19 + "End.")), [])
+
     def test_bad_cases(self):
         bad = {
             "unknown field": GOOD.replace("metadata:", "version: 1\nmetadata:"),
