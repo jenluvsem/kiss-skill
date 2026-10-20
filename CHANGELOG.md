@@ -2,6 +2,12 @@
 
 I dumped notable changes here so I wouldn't have to dig through git log later. The headings copy [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Numbers follow [Semantic Versioning](https://semver.org/), because that's what people already expect.
 
+## [Unreleased]
+
+### Changed
+- README rewritten. Says what KISS stands for, what the agent actually does, and shows a real test run.
+- Plugin descriptions say what the skill does instead of a slogan.
+
 ## [1.0.0] - 2026-10-20
 
 ### Added

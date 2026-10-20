@@ -6,7 +6,7 @@
     {
       "name": "kiss",
       "source": "./",
-      "description": "Choose the simplest design, cut scope, layers and dependencies."
+      "description": "KISS: checks whether a feature, layer or dependency is needed before building it, then proposes the smallest change."
     }
   ]
 }

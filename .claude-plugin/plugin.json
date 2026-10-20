@@ -1,6 +1,6 @@
 {
   "name": "kiss",
-  "description": "KISS skill: choose the simplest design, cut scope, layers and dependencies.",
+  "description": "KISS: checks whether a feature, layer or dependency is needed before building it, then proposes the smallest change.",
   "version": "1.0.0",
   "author": { "name": "Przemek Kula" },
   "license": "MIT"
