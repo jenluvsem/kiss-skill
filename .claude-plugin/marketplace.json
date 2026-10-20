@@ -1,0 +1,12 @@
+{
+  "name": "kiss-skill",
+  "description": "The KISS skill for Claude Code",
+  "owner": { "name": "AUTHOR_TBD" },
+  "plugins": [
+    {
+      "name": "kiss",
+      "source": "./",
+      "description": "Choose the simplest design, cut scope, layers and dependencies."
+    }
+  ]
+}
