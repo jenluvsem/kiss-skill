@@ -59,6 +59,8 @@ Implement: keep the structure that's already there. Fix the bug in the shared fu
 
 Review: scan for the smells below. For each hit, say what to cut or ask for the named need. Don't rewrite the whole diff.
 
+Simplify existing code: before you list a module as a cut, read it and grep its callers. Names lie: a file called `voice_memory` can be the main conversation path. Cut a part only together with everything that depends on it, including deployed firmware, devices and other clients that speak its protocol. Until that counterpart changes, it stays, even if it looks like clutter. A cut that stops the alarm from switching off is a bug, not KISS. Check: can you name every caller and consumer you read?
+
 Infrastructure: extra servers, containers, managed services page people at 3am. Look at what's already running. Platform config beats home-made glue.
 
 Skills, prompts, agents: if a line doesn't change what the model does, it's dead weight. Cut it. One solid skill per topic. Not five thin ones. Don't spin a multi-agent pipeline for one call or a twenty-line script.

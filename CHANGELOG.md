@@ -4,6 +4,9 @@ I dumped notable changes here so I wouldn't have to dig through git log later. T
 
 ## [Unreleased]
 
+### Added
+- Rule for simplifying existing code: read the module and grep its callers before cutting it, and keep it while firmware, devices or other clients still depend on it.
+
 ### Changed
 - README rewritten. Says what KISS stands for, what the agent actually does, and shows a real test run.
 - Plugin descriptions say what the skill does instead of a slogan.
