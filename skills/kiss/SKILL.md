@@ -3,7 +3,7 @@ name: kiss
 description: "KISS: use before adding a feature, plugin or layer. Also before a plugin system, config file, abstraction or dependency. Also when you choose between designs or review a plan or diff. Ask what is needed now, push back on speculative extras, propose the smallest change that works."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # KISS

@@ -1,7 +1,7 @@
 {
   "name": "kiss",
   "description": "KISS: checks whether a feature, layer or dependency is needed before building it, then proposes the smallest change.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": { "name": "Przemek Kula" },
   "license": "MIT"
 }

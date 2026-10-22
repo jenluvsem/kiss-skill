@@ -2,7 +2,7 @@
 
 I dumped notable changes here so I wouldn't have to dig through git log later. The headings copy [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Numbers follow [Semantic Versioning](https://semver.org/), because that's what people already expect.
 
-## [Unreleased]
+## [1.0.1] - 2026-10-22
 
 ### Added
 - Rule for simplifying existing code: read the module and grep its callers before cutting it, and keep it while firmware, devices or other clients still depend on it.
